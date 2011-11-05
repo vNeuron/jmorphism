@@ -21,6 +21,11 @@ jmorphism can create a one-to-one correspondence mapping a point in poly to a po
 
     PolygonMorphism morphism = PolygonMorphismFactory.get(PolygonMorphismKind.Rigid, poly, polyT);
 
+morphism is a structure preserving mapping. Two kinds of morphisms are available:
+
+* Rigid: Uses internally the generalized barycentric coordinates
+* ShapePreserving: Uses internally the Green Coordinates that lead to shape-preserving deformations
+
 To compute the image of a point lying inside the polygon poly:
 
     Vector2D p2 = morphism.map(p);//p2 is inside polyT
