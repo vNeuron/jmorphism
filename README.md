@@ -17,7 +17,11 @@ Given two polygons poly and polyT formed by a clockwise collections of vertices:
     Polygon2D poly  = new Polygon2D(vertices);
     Polygon2D polyT = new Polygon2D(verticesT);
 
-jmorphism can create a funcion (morphism) mapping every point in poly to a point in polyT:
+jmorphism can create a one-to-one correspondence mapping a point in poly to a point in polyT:
 
     PolygonMorphism morphism = PolygonMorphismFactory.get(PolygonMorphismKind.Rigid, poly, polyT);
+
+To compute the image of a point lying inside the polygon poly:
+
+    Vector2D p2 = morphism.map(p);//p2 is inside polyT
 
