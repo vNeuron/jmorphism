@@ -30,3 +30,7 @@ To compute the image of a point lying inside the polygon poly:
 
     Vector2D p2 = morphism.map(p);//p2 is inside polyT
 
+Building
+--------
+
+    mvn clean install
