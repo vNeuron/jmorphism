@@ -5,6 +5,11 @@ A Java library for  2D Cage-based Image Transform.
 
 [See a video of  jmorphism in action](http://www.youtube.com/watch?v=eMu-ePsIh8I)
 
+The input is an arbitrary polygon P (not necessarily convex) containing an image (image 1). 
+The pixels of (image 1) change their positions, under the influence of the vertices of P.
+
+<img alt="jmorphism demo" src="https://github.com/GHamrouni/jmorphism/raw/master/deformation.jpg" />
+
 
 Using this library
 ------------------
@@ -34,3 +39,16 @@ Building
 --------
 
     mvn clean install
+
+Contributing
+--------
+
+If you'd like to contribute :
+
+1. Fork it and create a branch
+1. Hack it and Commit your changes
+1. Push to the branch
+1. Send a pull request
+
+
+
