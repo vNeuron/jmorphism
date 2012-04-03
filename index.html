@@ -1,0 +1,99 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Jmorphism by GHamrouni</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="javascripts/respond.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" href="stylesheets/ie.css">
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+  </head>
+  <body>
+
+      <div id="header">
+        <nav>
+          <li class="fork"><a href="https://github.com/GHamrouni/jmorphism">Fork On GitHub</a></li>
+          <li class="downloads"><a href="https://github.com/GHamrouni/jmorphism/zipball/master">ZIP</a></li>
+          <li class="downloads"><a href="https://github.com/GHamrouni/jmorphism/tarball/master">TAR</a></li>
+          <li class="title">DOWNLOADS</li>
+        </nav>
+      </div><!-- end header -->
+
+    <div class="wrapper">
+
+      <section>
+        <div id="title">
+          <h1>Jmorphism</h1>
+          <p>jmorphism: A Java library for 2D Cage-based Image Transform</p>
+          <hr>
+          <span class="credits left">Project maintained by <a href="https://github.com/GHamrouni">GHamrouni</a></span>
+          <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/#!/michigangraham">mattgraham</a></span>
+        </div>
+
+        <h1>jmorphism</h1>
+
+<p>A Java library for  2D Cage-based Image Transform.</p>
+
+<p><a href="http://www.youtube.com/watch?v=eMu-ePsIh8I">See a video of  jmorphism in action</a></p>
+
+<p>The input is an arbitrary polygon P (not necessarily convex) containing an image (image 1). 
+The pixels of (image 1) change their positions, under the influence of the vertices of P.</p>
+
+<p><img alt="jmorphism demo" src="https://github.com/GHamrouni/jmorphism/raw/master/deformation.jpg"></p>
+
+<h2>Using this library</h2>
+
+<p>Given two polygons poly and polyT formed by a clockwise collections of vertices:</p>
+
+<pre><code>Collection&lt;Vector2D&gt; vertices  = (...)
+Collection&lt;Vector2D&gt; verticesT = (...) 
+
+Polygon2D poly  = new Polygon2D(vertices);
+Polygon2D polyT = new Polygon2D(verticesT);
+</code></pre>
+
+<p>jmorphism can create a one-to-one correspondence mapping a point in poly to a point in polyT:</p>
+
+<pre><code>PolygonMorphism morphism = PolygonMorphismFactory.get(PolygonMorphismKind.Rigid, poly, polyT);
+</code></pre>
+
+<p>morphism is a structure preserving mapping. Two kinds of morphisms are available:</p>
+
+<ul>
+<li>Rigid: Uses internally the generalized barycentric coordinates</li>
+<li>ShapePreserving: Uses internally the Green Coordinates that lead to shape-preserving deformations</li>
+</ul><p>To compute the image of a point lying inside the polygon poly:</p>
+
+<pre><code>Vector2D p2 = morphism.map(p);//p2 is inside polyT
+</code></pre>
+
+<h2>Building</h2>
+
+<pre><code>mvn clean install
+</code></pre>
+
+<h2>Contributing</h2>
+
+<p>If you'd like to contribute :</p>
+
+<ol>
+<li>Fork it and create a branch</li>
+<li>Hack it and Commit your changes</li>
+<li>Push to the branch</li>
+<li>Send a pull request</li>
+</ol>
+      </section>
+
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><!--<![endif]-->
+  </body>
+</html>
